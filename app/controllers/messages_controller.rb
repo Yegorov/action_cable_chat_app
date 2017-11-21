@@ -10,6 +10,13 @@ class MessagesController < ApplicationController
     if message.save
       ActionCable.server.broadcast 'room_channel',
                                    message: render_message(message)
+      message.mentions.each do |mention|
+        ActionCable.server.broadcast "room_channel_user_#{mention.id}",
+                                     mention: {
+                                       is_mention: true,
+                                       text: "You have a mention from @#{message.user.username}!"
+                                     }
+      end
     else
       render 'index'
     end

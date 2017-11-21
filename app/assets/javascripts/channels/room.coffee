@@ -7,6 +7,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    alert(data.mention.text) if data.mention && data.mention.is_mention
     unless data.message.blank?
       $('#messages-table').append data.message
 
