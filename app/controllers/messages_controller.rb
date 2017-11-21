@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   before_action :get_messages
 
   def index
+    #ActionCable.server.broadcast 'room_channel', mention: {is_mention: true, text: "Hello"}
   end
 
   def create
