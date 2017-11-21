@@ -12,6 +12,8 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="message-user">' + data.username + ':' + '</div>' +
         '<div class="message-content">' + data.content + '</div>' + '</div>'
 
+      #$('#messages').scrollTop($('#messages').prop('scrollHeight'));
+
 $(document).on 'turbolinks:load', ->
   submit_message()
 
