@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast 'room_channel',
                                    content: message.content,
                                    username: message.user.username
-      redirect_to messages_url
     else
       render 'index'
     end
