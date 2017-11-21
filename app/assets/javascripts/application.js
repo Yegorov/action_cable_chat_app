@@ -14,3 +14,29 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+/*
+gretting_doubler = function(phrase) {
+  alert(phrase + ' ' + phrase);
+}
+
+// gretting_doubler("Hello world!");
+
+gretting_doubler("¡Hola, mundo!");
+*/
+// https://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links
+/*
+$(document).on('turbolinks:load', function() {
+  $('#messages-table').append('hello, world!');
+});
+*/
+
+/*
+message_appender = function(content) {
+  $('#messages-table').append(content);
+}
+
+$(document).on('turbolinks:load', function() {
+  message_appender('hello world');
+});
+*/
